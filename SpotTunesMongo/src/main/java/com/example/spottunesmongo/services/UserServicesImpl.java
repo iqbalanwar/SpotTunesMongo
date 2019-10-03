@@ -3,6 +3,7 @@ package com.example.spottunesmongo.services;
 import com.example.spottunesmongo.model.User;
 import com.example.spottunesmongo.repository.UserRespository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -24,6 +25,17 @@ public class UserServicesImpl implements UserServices {
 
     @Override
     public User login(User user){
+//        User newUser = userRespository.findByUsername(user.getUsername());
+//        if(newUser != null && user.getPassword().equals(newUser.getPassword())) {
+//            return userRespository.login(user.getUsername(), user.getPassword());
+//        }
+//        return null;
         return userRespository.login(user.getUsername(), user.getPassword());
+    }
+
+    @Override
+    public HttpStatus deleteById(String userId){
+        userRespository.deleteById(userId);
+        return HttpStatus.OK;
     }
 }
