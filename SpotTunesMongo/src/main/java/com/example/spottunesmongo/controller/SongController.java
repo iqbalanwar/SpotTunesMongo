@@ -24,7 +24,7 @@ public class SongController {
         return songServices.addSong(song);
     }
 
-    @DeleteMapping("/delete/id")
+    @DeleteMapping("/delete/{id}")
     public String deleteSong(@PathVariable String id) {
         return songServices.deleteSong(id);
     }
