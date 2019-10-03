@@ -12,5 +12,4 @@ public interface UserRespository extends MongoRepository<User, String> {
 
     @Query(" {'user.username' : ?0, 'user.password' : ?1} ")
     public User login(String username, String password);
-
 }
