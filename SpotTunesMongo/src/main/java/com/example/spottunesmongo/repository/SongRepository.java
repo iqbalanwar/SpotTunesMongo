@@ -1,4 +1,7 @@
 package com.example.spottunesmongo.repository;
 
-public class SongRepository {
+import com.example.spottunesmongo.model.Song;
+import org.springframework.data.mongodb.repository.MongoRepository;
+
+public interface SongRepository extends MongoRepository<Song, String> {
 }
