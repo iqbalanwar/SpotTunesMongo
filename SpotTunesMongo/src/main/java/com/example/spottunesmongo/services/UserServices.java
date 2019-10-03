@@ -1,4 +1,13 @@
 package com.example.spottunesmongo.services;
 
-public class UserServices {
+import com.example.spottunesmongo.model.User;
+
+import java.util.List;
+
+public interface UserServices {
+    public User createUser(User newUser);
+
+    public List<User> listUsers();
+
+    public User login(User user);
 }
