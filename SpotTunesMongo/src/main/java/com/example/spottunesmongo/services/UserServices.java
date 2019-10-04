@@ -13,4 +13,6 @@ public interface UserServices {
     public User login(User user);
 
     public HttpStatus deleteById(String userId);
+
+    public User changePassword(String username, String newPassword);
 }
