@@ -16,7 +16,11 @@ public interface SongServices {
     // add song
     public Song addSong(Song song);
 
-    // delete song
-    public String deleteSong(String id);
+    // delete song by title
+    // I get this is dumb, but this is just to see
+    // Ofc it's better by id. It's w/e
+    public String deleteSong(String title);
 
+    // Just some CRUD operation on the title too
+    public Song updateTitle(String title, String newTitle);
 }
