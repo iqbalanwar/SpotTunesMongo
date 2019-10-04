@@ -29,4 +29,9 @@ public class UserController {
     public HttpStatus deleteUser(@PathVariable String userId) {
         return userServices.deleteById(userId);
     }
+
+    @PostMapping("/{username}/{newPassword}")
+    public User changePassword(@PathVariable String username, @PathVariable String newPassword) {
+        return userServices.changePassword(username, newPassword);
+    }
 }

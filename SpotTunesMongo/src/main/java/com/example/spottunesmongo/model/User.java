@@ -10,14 +10,14 @@ import java.util.List;
 @Document
 public class User {
     @Id
-    public String id;
+    private String id;
 
     @Indexed(unique = true)
-    public String username;
-    public String password;
+    private String username;
+    private String password;
 
     @DBRef
-    public List<Song> songs;
+    private List<Song> songs;
 
     public List<Song> getSongs() {
         return songs;

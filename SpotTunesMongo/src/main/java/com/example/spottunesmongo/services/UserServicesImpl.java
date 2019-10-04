@@ -38,4 +38,11 @@ public class UserServicesImpl implements UserServices {
         userRespository.deleteById(userId);
         return HttpStatus.OK;
     }
+
+    @Override
+    public User changePassword(String username, String newPassword) {
+        User changePwUser = userRespository.findByUsername(username);
+        changePwUser.setPassword(newPassword);
+        return userRespository.save(changePwUser);
+    }
 }
