@@ -24,8 +24,14 @@ public class SongController {
         return songServices.addSong(song);
     }
 
-    @DeleteMapping("/delete/{id}")
-    public String deleteSong(@PathVariable String id) {
-        return songServices.deleteSong(id);
+    @DeleteMapping("/delete/{title}")
+    public String deleteSong(@PathVariable String title) {
+//        String deleteTitle = title.replace('_', ' ');
+        return songServices.deleteSong(title);
+    }
+
+    @PostMapping("/{title}/{newTitle}")
+    public Song updateTitle(@PathVariable String title, @PathVariable String newTitle) {
+        return songServices.updateTitle(title, newTitle);
     }
 }

@@ -25,8 +25,19 @@ public class SongServicesImp implements SongServices {
     }
 
     @Override
-    public String deleteSong(String id) {
-        songRepository.deleteById(id);
+    public String deleteSong(String title) {
+        // Find a song in the database, by it's title
+        // return the object
+        // delete the object with .delete(obj)
+        Song song = songRepository.findByTitle(title);
+        songRepository.delete(song);
         return "Success. Song deleted.";
+    }
+
+    @Override
+    public Song updateTitle(String title, String newTitle) {
+        Song song = songRepository.findByTitle(title);
+        song.setTitle(newTitle);
+        return songRepository.save(song);
     }
 }

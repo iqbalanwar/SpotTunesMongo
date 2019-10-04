@@ -8,11 +8,11 @@ public class Song {
 
     // song object in the db will have these fields
     @Id
-    public String id;
+    private String id;
 
-    public String title;
+    private String title;
 
-    public String length;
+    private String length;
 
     // getters and setters
 

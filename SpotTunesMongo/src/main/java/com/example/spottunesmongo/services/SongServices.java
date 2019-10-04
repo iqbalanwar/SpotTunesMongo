@@ -16,7 +16,9 @@ public interface SongServices {
     // add song
     public Song addSong(Song song);
 
-    // delete song
-    public String deleteSong(String id);
+    // delete song by title
+    public String deleteSong(String title);
 
+    // Just some CRUD operation
+    public Song updateTitle(String title, String newTitle);
 }
